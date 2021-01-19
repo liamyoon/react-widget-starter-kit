@@ -22,7 +22,7 @@ export class CustomWidget extends ReactWidget {
 
   render(): JSX.Element {
     return (
-      <MainBox>Content</MainBox>
+      <MainBox>asdadsas</MainBox>
     );
   }
 }

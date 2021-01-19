@@ -33,11 +33,12 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^2.0.0",
-    "@jupyterlab/hub-extension": "^2.0.0",
-    "@jupyterlab/launcher": "^2.0.0",
-    "@jupyterlab/notebook": "^2.0.0",
-    "@jupyterlab/ui-components": "^2.0.0",
+    "@jupyterlab/application": "^3.0.0",
+    "@jupyterlab/completer": "^3.0.0",
+    "@jupyterlab/hub-extension": "^3.0.0",
+    "@jupyterlab/launcher": "^3.0.0",
+    "@jupyterlab/notebook": "^3.0.0",
+    "@jupyterlab/ui-components": "^3.0.0",
     "axios": "^0.21.1",
     "react-modal": "^3.12.1",
     "styled-components": "^5.2.1"
