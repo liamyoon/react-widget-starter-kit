@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'jsdoc'],
   rules: {
+    'react/prop-types': 'off',
     'prettier/prettier': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/interface-name-prefix': [
@@ -30,7 +31,6 @@ module.exports = {
       'single',
       { avoidEscape: true, allowTemplateLiterals: false }
     ],
-    curly: ['error', 'all'],
     eqeqeq: 'error',
     'jsdoc/require-param-type': 'off',
     'jsdoc/require-property-type': 'off',
