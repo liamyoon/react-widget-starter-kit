@@ -6,3 +6,5 @@ node_modules/
 *.tsbuildinfo
 .idea/
 *.ipynb
+package-lock.json
+yarn.lock
