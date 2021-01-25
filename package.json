@@ -1,5 +1,5 @@
 {
-  "name": "my-custom-extension-v3",
+  "name": "my-custom-widget",
   "version": "0.1.0",
   "description": "Example of using a React Widget in a Jupyterlab extension",
   "keywords": [
@@ -33,7 +33,7 @@
     "build:prod": "jlpm run build:lib && jlpm run build:labextension",
     "clean": "jlpm run clean:lib",
     "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
-    "clean:labextension": "rimraf my-custom-extension/labextension",
+    "clean:labextension": "rimraf widget/labextension",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "eslint": "eslint . --ext .ts,.tsx --fix",
     "eslint:check": "eslint . --ext .ts,.tsx",
@@ -44,9 +44,9 @@
     "watch:src": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^3.0.0-rc.15",
-    "@jupyterlab/launcher": "^3.0.0-rc.15",
-    "@jupyterlab/ui-components": "^3.0.0-rc.15"
+    "@jupyterlab/application": "^3.0.0",
+    "@jupyterlab/launcher": "^3.0.0",
+    "@jupyterlab/ui-components": "^3.0.0"
   },
   "devDependencies": {
     "@jupyterlab/builder": "^3.0.0-rc.15",
@@ -67,6 +67,6 @@
   ],
   "jupyterlab": {
     "extension": true,
-    "outputDir": "my-custom-extension/labextension"
+    "outputDir": "widget/labextension"
   }
 }
