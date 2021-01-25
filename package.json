@@ -1,5 +1,5 @@
 {
-  "name": "my-custom-widget",
+  "name": "custom-widget",
   "version": "0.1.0",
   "description": "Example of using a React Widget in a Jupyterlab extension",
   "keywords": [
@@ -49,7 +49,7 @@
     "@jupyterlab/ui-components": "^3.0.0"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^3.0.0-rc.15",
+    "@jupyterlab/builder": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "eslint": "^7.5.0",
@@ -67,6 +67,6 @@
   ],
   "jupyterlab": {
     "extension": true,
-    "outputDir": "widget/labextension"
+    "outputDir": "react_widget_starter_kit/labextension"
   }
 }

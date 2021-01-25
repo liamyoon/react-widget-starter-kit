@@ -20,7 +20,7 @@ const extension: JupyterFrontEndPlugin<void> = {
       label: 'Execute example:main-menu Command',
       caption: 'Execute example:main-menu Command',
       execute: () => {
-        console.log('onload labextension example');
+        console.log('onload labextension example 2');
       },
     });
     app.commands.execute(command);
