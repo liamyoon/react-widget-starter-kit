@@ -1,5 +1,5 @@
 {
-  "name": "my-custom-widget",
+  "name": "my-custom-extension-v3",
   "version": "0.1.0",
   "description": "Example of using a React Widget in a Jupyterlab extension",
   "keywords": [
@@ -7,12 +7,12 @@
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/liamyoon/react-widget-starter-kit",
+  "homepage": "https://github.com/jupyterlab/extension-examples",
   "bugs": {
-    "url": "https://github.com/liamyoon/react-widget-starter-kit/issues"
+    "url": "https://github.com/jupyterlab/extension-examples/issues"
   },
   "license": "BSD-3-Clause",
-  "author": "",
+  "author": "Project Jupyter Contributors",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
     "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
@@ -22,43 +22,51 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liamyoon/react-widget-starter-kit"
+    "url": "https://github.com/jupyterlab/extension-examples.git"
   },
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
-    "link": "jupyter labextension link . --no-build",
+    "build": "jlpm run build:lib && jlpm run build:labextension:dev",
+    "build:all": "jlpm run build:lib && jlpm run build:labextension",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True .",
+    "build:lib": "tsc",
+    "build:prod": "jlpm run build:lib && jlpm run build:labextension",
+    "clean": "jlpm run clean:lib",
+    "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
+    "clean:labextension": "rimraf my-custom-extension/labextension",
+    "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "eslint": "eslint . --ext .ts,.tsx --fix",
     "eslint:check": "eslint . --ext .ts,.tsx",
-    "watch": "tsc -w"
+    "install:extension": "jupyter labextension develop --overwrite .",
+    "prepare": "jlpm run clean && jlpm run build:prod",
+    "watch": "run-p watch:src watch:labextension",
+    "watch:labextension": "jupyter labextension watch .",
+    "watch:src": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^3.0.0",
-    "@jupyterlab/completer": "^3.0.0",
-    "@jupyterlab/hub-extension": "^3.0.0",
-    "@jupyterlab/launcher": "^3.0.0",
-    "@jupyterlab/notebook": "^3.0.0",
-    "@jupyterlab/ui-components": "^3.0.0",
-    "axios": "^0.21.1",
-    "react-modal": "^3.12.1",
-    "styled-components": "^5.2.1"
+    "@jupyterlab/application": "^3.0.0-rc.15",
+    "@jupyterlab/launcher": "^3.0.0-rc.15",
+    "@jupyterlab/ui-components": "^3.0.0-rc.15"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.7",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
+    "@jupyterlab/builder": "^3.0.0-rc.15",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-jsdoc": "^22.0.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
-    "rimraf": "^3.0.0",
-    "typescript": "~3.7.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.0",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.1.3"
   },
   "sideEffects": [
     "style/*.css"
   ],
   "jupyterlab": {
-    "extension": true
+    "extension": true,
+    "outputDir": "my-custom-extension/labextension"
   }
 }

@@ -8,3 +8,4 @@ node_modules/
 *.ipynb
 package-lock.json
 yarn.lock
+my-custom-extension/labextension

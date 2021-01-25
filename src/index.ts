@@ -7,7 +7,7 @@ import {
  * Initialization data for the react-widget extension.
  */
 const extension: JupyterFrontEndPlugin<void> = {
-  id: 'react-widget',
+  id: 'my-custom-widget',
   autoStart: true,
   optional: [],
   activate: (
