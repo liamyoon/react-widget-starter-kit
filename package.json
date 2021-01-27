@@ -46,7 +46,8 @@
   "dependencies": {
     "@jupyterlab/application": "^3.0.0",
     "@jupyterlab/launcher": "^3.0.0",
-    "@jupyterlab/ui-components": "^3.0.0"
+    "@jupyterlab/ui-components": "^3.0.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@jupyterlab/builder": "^3.0.0",
